@@ -1,0 +1,144 @@
+#chat {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    height: 515px;
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#chat .header {
+    display: inline-block;
+    padding: 10px 40px;
+    border-bottom: 1px solid #f2f2f2;
+    width: 320px;
+}
+
+#chat .header img {
+    vertical-align: middle;
+}
+
+#chat .header span {
+    font-size: 1.1em;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+#chat .messages {
+    margin: 15px 25px;
+    max-height: 355px;
+    overflow-y: auto;
+}
+
+#chat .message {
+    line-height: 1.4em;
+    border-radius: 10px;
+    margin: 5px;
+    overflow-x: hidden;
+    padding: 10px 15px;
+    position: relative;
+}
+#chat .message.to {
+    background-color: #8180f0;
+    color: #fff;
+    margin-left: 100px;
+    text-align: right;
+}
+#chat .message.from {
+    background-color: #f5f3fd;
+    color: #67676c;
+    margin-right: 100px;
+}
+
+#chat .footer {
+    position: absolute;
+    top: 450px;
+    background-color: #f7f7f7;
+    width: 400px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#chat .footer input {
+    background-color: #f7f7f7;
+    border: none transparent;
+    outline: none;
+    margin-left: 12px;
+    padding-left: 20px;
+    height: 60px;
+    width: 270px;
+}
+
+#chat .footer ::placeholder {
+    color: #989898;
+}
+
+#chat .footer button.send {
+    border: none transparent;
+    outline: none;
+    border-radius: 20px;
+    background-color: #8180f0;
+    color: #ffffff;
+    margin: 13px 30px;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+}
+
+button#close {
+    position: fixed;
+    top: 590px;
+    right: 10px;
+    border: none transparent;
+    outline: none;
+    border-radius: 25px;
+    background-color: #8180f0;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 4px 15px 6px;
+}
+
+button#open {
+    display: none;
+    position: fixed;
+    top: 585px;
+    right: 190px;
+    border: none transparent;
+    outline: none;
+    border-radius: 25px;
+    background-color: #8180f0;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px 15px 5px 6px;
+}
+
+button#open img {
+    vertical-align: middle;
+}
+
+button#open span {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+@media (max-height: 640px) {
+    button#open {
+        display: inline-block;
+        top: 220px;
+    }
+
+    button#close {
+        display: none;
+    }
+
+    #chat {
+        display: none;
+    }
+}

@@ -1,0 +1,31 @@
+<div id="chat">
+  <div class="header">
+    <img src="/assets/ic_round_bot.png">
+    <span>Autie</span>
+  </div>
+
+  <div class="messages">
+    <div class="message from">Hello! I am Autie</div>
+    <div class="message from">I'm ready to listen, 24/7. No couches, no meds, no childhood stuff. Just strategies to improve your mood. And the occasional dorky joke.</div>
+    <div class="message to">Hi Autie!</div>
+
+    <ng-container *ngFor="let message of messages | async">
+
+      <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                        'to':   message.sentBy === 'user' }">
+        {{ message.content }}
+      </div>
+
+    </ng-container>
+
+  </div>
+
+  <div class="footer">
+    <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" id="input" type="text" placeholder="Type your message here...">
+
+    <button class="send" (click)="sendMessage()">➤</button>
+            
+  </div>
+</div>
+<button id="close" (click)="toggleChat()">&times;</button>            
+<button id="open" (click)="toggleChat()"><img src="/assets/ic_round_bot.png"><span>Say Hello!</span></button>            
