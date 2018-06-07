@@ -1,0 +1,15 @@
+<header>
+  <div class="back" routerLink=""><</div>
+  <div class="title">{{id | async | uppercase}}</div>
+</header>
+<section [innerHTML]="info$ | async"></section>
+<footer>
+  <div class="logo">
+    <img src="/assets/ic_logo.png"> 
+    <span>Autie</span>
+  </div>
+  <div>&copy; 2018. All rights reserved.</div>
+  <div>
+    <a href="mailto:hello@autie.io">hello@autie.io</a>
+  </div>
+</footer>
