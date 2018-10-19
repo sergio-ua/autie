@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { environment } from '../../environments/environment';
+
 import "rxjs/add/operator/map";
-import "rxjs/add/operator/startWith";
-import "rxjs/add/operator/switchMap";
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'info',
@@ -12,16 +10,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent {
-  id;
-  item: Observable<any>;
-  info$;
+  info;
+  title;
 
-  constructor(private route:ActivatedRoute, private db: AngularFireDatabase){
-    this.id = route.params.map((p:any) => p.id);
-    this.info$ = route.params
-      .map((p:any) => p.id)
-      .switchMap(id => db.object(id).valueChanges())
-      .startWith('Loading...');
-    this.item = db.object('symptoms').valueChanges();
+  constructor(private route:ActivatedRoute){
+    this.info = route.params
+      .map((p:any) => environment.content[p.id].body);
+
+    this.title = route.params
+      .map((p:any) => environment.content[p.id].title);
+
+      window.scrollTo(0, 0);
   }
 }

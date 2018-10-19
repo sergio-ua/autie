@@ -1,4 +1,4 @@
-<div id="chat">
+<div id="chat" [ngClass]="{ 'hide': hideChat}" class="fadeIn">
   <div class="header">
     <img src="/assets/ic_round_bot.png">
     <span>Autie</span>
@@ -21,11 +21,11 @@
   </div>
 
   <div class="footer">
-    <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" id="input" type="text" placeholder="Type your message here...">
+    <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" id="input" type="text" placeholder="Type your message here..." autofocus>
 
     <button class="send" (click)="sendMessage()">➤</button>
             
   </div>
 </div>
-<button id="close" (click)="toggleChat()">&times;</button>            
-<button id="open" (click)="toggleChat()"><img src="/assets/ic_round_bot.png"><span>Say Hello!</span></button>            
+<button [ngClass]="{ 'hide': !hideChat}" id="close" (click)="toggleChat()">&times;</button>            
+<button [ngClass]="{ 'show': hideChat}" id="open" (click)="toggleChat()"><img src="/assets/ic_round_bot.png"><span>Say Hello!</span></button>            

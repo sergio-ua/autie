@@ -8,6 +8,35 @@
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
     border-radius: 20px;
     margin: 20px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;    
+}
+
+#chat.hide {
+    display: none;
+}
+
+@-webkit-keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+ 
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+ 
+.fadeIn {
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
 }
 
 #chat .header {
@@ -107,7 +136,7 @@ button#open {
     display: none;
     position: fixed;
     top: 585px;
-    right: 190px;
+    right: 10px;
     border: none transparent;
     outline: none;
     border-radius: 25px;
@@ -116,6 +145,10 @@ button#open {
     font-size: 1.2em;
     cursor: pointer;
     padding: 5px 15px 5px 6px;
+}
+
+button#open.show {
+    display: block;
 }
 
 button#open img {

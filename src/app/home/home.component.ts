@@ -7,4 +7,12 @@
 })
 export class HomeComponent {
   title = 'home';
+
+  scrollTo(pos) {
+    window.scroll({
+      top: pos,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
 }

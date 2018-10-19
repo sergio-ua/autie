@@ -13,32 +13,30 @@ export class ChatDialogComponent implements OnInit {
 
   messages: Observable<Message[]>;
   formValue: string;
+  hideChat: boolean;
 
   constructor(public chat: ChatService) { }
 
   ngOnInit() {
-    document.getElementById('input').focus();
+    this.hideChat = false;
+
     // appends to array after each new message is added to feedSource
     this.messages = this.chat.conversation.asObservable()
         .scan((acc, val) => acc.concat(val) );
   }
 
   sendMessage() {
-    this.chat.converse(this.formValue);
-    this.formValue = '';
+  	if (this.formValue && this.formValue.trim()) {
+  	  this.chat.converse(this.formValue);
+      this.formValue = '';
+    }  
   }
 
   toggleChat() {
-    document.getElementById('close').style.display = 
-      document.getElementById('close').style.display !== 'none' ?
-      'none' : 'block';  
-    document.getElementById('open').style.display = 
-      document.getElementById('open').style.display !== 'inline-block' ?
-      'inline-block' : 'none';
-    document.getElementById('chat').style.display = 
-      document.getElementById('chat').style.display !== 'none' ?
-      'none' : 'block';
-    document.getElementById('input').focus();
+	this.hideChat = !this.hideChat;
+	setTimeout( ()=> {
+      document.getElementById('input').focus();
+    }, 0);
   }
 
 }

@@ -1,8 +1,8 @@
 <header>
   <div class="back" routerLink=""><</div>
-  <div class="title">{{id | async | uppercase}}</div>
+  <div class="title">{{title | async }}</div>
 </header>
-<section [innerHTML]="info$ | async"></section>
+<section [innerHTML]="info | async"></section>
 <footer>
   <div class="logo">
     <img src="/assets/ic_logo.png"> 

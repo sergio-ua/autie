@@ -22,9 +22,9 @@ header .back {
 }
 
 header .title {
-    display: inline-block;
+    display: block;
     text-align: center;
-    padding: 30px 200px;
+    padding: 30px;
     font-size: 2em;
     font-weight: bold;
     vertical-align: middle;
