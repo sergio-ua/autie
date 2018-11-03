@@ -1,11 +1,12 @@
 header {
     background-color: #f7f7f7;
-    padding: 15px 160px;
+    padding: 15px 15px;
     height: 93px;
 }
 
 header .back {
     background-color: #8180f0;
+    outline: none;
     border-radius: 30px;
     color: #ffffff;
     display: inline-block;
@@ -19,6 +20,7 @@ header .back {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+    transform: rotateY(180deg);
 }
 
 header .title {
@@ -37,6 +39,10 @@ section {
     margin: 0 auto;
     padding: 30px;
     width: 800px;
+}
+
+hr {
+    width: 60%;
 }
 
 .logo img {

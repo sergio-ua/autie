@@ -74,13 +74,13 @@
 #chat .message.to {
     background-color: #8180f0;
     color: #fff;
-    margin-left: 100px;
+    margin-left: 40px;
     text-align: right;
 }
 #chat .message.from {
     background-color: #f5f3fd;
     color: #67676c;
-    margin-right: 100px;
+    margin-right: 40px;
 }
 
 #chat .footer {
@@ -107,21 +107,30 @@
 }
 
 #chat .footer button.send {
+    display: flex;
     border: none transparent;
     outline: none;
-    border-radius: 20px;
+    border-radius: 50%;
     background-color: #8180f0;
     color: #ffffff;
     margin: 13px 30px;
     padding: 10px;
     float: right;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+#chat .footer button.send::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
 
 button#close {
     position: fixed;
     top: 590px;
-    right: 10px;
+    right: 20px;
     border: none transparent;
     outline: none;
     border-radius: 25px;
@@ -136,7 +145,7 @@ button#open {
     display: none;
     position: fixed;
     top: 585px;
-    right: 10px;
+    right: 20px;
     border: none transparent;
     outline: none;
     border-radius: 25px;

@@ -83,8 +83,7 @@ header nav div a {
 
 #tasks .card {
     width: 400px;
-    margin-top: 120px;
-    padding: 0;
+    margin-top: 80px;
 }
 
 #tasks .card h2 {
@@ -100,15 +99,6 @@ header nav div a {
     height: 220px;
 }
 
-#tasks .daily .card:first-of-type::before {
-    content: "D A I L Y";
-    color: #908e9e;
-    font-size: 1.5em;
-    font-weight: bold;
-    position: absolute;
-    margin-top: -70px;
-}
-
 #findout {
     padding: 80px 0;    
 }
@@ -121,23 +111,30 @@ header nav div a {
     padding: 80px 0;    
 }
 
-#team .card {
-    width: 290px;
+#team .member {
+    width: 150px;
+    padding: 15px;
 }
 
-#team .card h2,h3 {
+#team .member h4 {
     text-align: center;
-    padding: 0 20px;
 }
 
-#team .card img {
-    border-radius: 20px;
-    width: 290px;
-    height: 290px;
+#team .member h5 {
+    text-align: center;
+    padding: 0 10px;
+    color: #8a8a8a;
+    margin-top: -10px;    
+}
+
+#team .member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
 
 #team .caption {
-    margin-bottom: 50px; 
+    margin-bottom: 20px; 
 }
 
 /* On mouse-over, add a deeper shadow */
